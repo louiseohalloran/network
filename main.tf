@@ -28,25 +28,25 @@ resource "ibm_compute_ssh_key" "ssh_key" {
 # Variables
 ##############################################################################
 variable bxapikey {
-  description = "Your Bluemix API Key."
+  description = "Your Bluemix API key. You can create an API key by running bx iam api-key-create <key name>."
 }
 variable slusername {
-  description = "Your Softlayer username."
+  description = "Your Bluemix Infrastructure (SoftLayer) user name."
 }
 variable slapikey {
-  description = "Your Softlayer API Key."
+  description = "Your Bluemix Infrastructure (SoftLayer) API key."
 }
 variable datacenter {
-  description = "The datacenter to create resources in."
+  description = "The data center that you want to create resources in. You can run bluemix cs locations to see a list of all data centers in your region."
 }
 variable public_key {
-  description = "Your public SSH key material."
+  description = "The public key material for the SSH keypair."
 }
 variable key_label {
-  description = "A label for the SSH key that gets created."
+  description = "An identifying label to assign to the SSH key."
 }
 variable key_note {
-  description = "A note for the SSH key that gets created."
+  description = "Notes to store with the SSH key."
 }
 
 ##############################################################################
