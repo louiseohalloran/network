@@ -23,7 +23,7 @@ Environments can be used to separate software components into development tiers 
 |-------------|-----------|-------------|
 |bxapikey|Your Bluemix API key. You can get the value by running `bx iam api-key-create <key name>`.||
 |datacenter|The data center for the SSH key. You can run `bluemix cs locations` to see a list of all data centers in your region.||
-|key_label|An identifying label to assign to the SSH key.|ssh_key_scale_group|
+|key_label|An identifying label to assign to the SSH key.||
 |key_note|Notes to store with the SSH key. | |
 |public_key|The public key contents for the SSH keypair. | |
 |slapikey|Your Bluemix Infrastructure (SoftLayer) API key.| |
