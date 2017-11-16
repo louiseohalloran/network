@@ -1,10 +1,10 @@
 # SSH key template
 
-An [IBM Cloud Schematics](https://console.bluemix.net/docs/services/schematics/index.html) template that creates an [IBM Cloud SSH Key](https://ibm-bluemix.github.io/tf-ibm-docs/v0.4.0/r/compute_ssh_key.html) (`ibm_compute_ssh_key`). This template creates am SSH key in the specified IBM cloud account. This is not a module, it is a Terraform configuration that should be cloned or forked to be used.
+An [IBM Cloud Schematics](https://console.bluemix.net/docs/services/schematics/index.html) template that creates an [IBM Cloud SSH Key](https://ibm-bluemix.github.io/tf-ibm-docs/v0.4.0/r/compute_ssh_key.html) (`ibm_compute_ssh_key`). This template creates am SSH key in the specified IBM Cloud account. This is not a module, it is a Terraform configuration that should be cloned or forked to be used.
 
 Schematics uses [Terraform](https://www.terraform.io/) as the infrastructure as code engine. With this template, you can provision and manage infrastructure as a single unit.
 
-See the [Terraform provider docs](https://ibm-bluemix.github.io/tf-ibm-docs/) for available resource for the IBM cloud.
+See the [Terraform provider docs](https://ibm-bluemix.github.io/tf-ibm-docs/) for available resources for the IBM Cloud.
 
 **This configuration template is written for IBM Cloud provider version `v0.4.0`**
 
@@ -12,7 +12,7 @@ See the [Terraform provider docs](https://ibm-bluemix.github.io/tf-ibm-docs/) fo
 
 Environments can be used to separate software components into development tiers (e.g. staging, QA, and production).
 
-1. In Bluemix, go to the menu and select the [Schematics dashboard](https://console.bluemix.net/schematics).
+1. In IBM Cloud, go to the menu and select the [Schematics dashboard](https://console.bluemix.net/schematics).
 2. In the left navigation menu, select **Templates** to access the template catalog.
 3. Click **Create** on the SSH key template. You are taken to a configuration page where you can define metadata about your environment. 
 4. Define values for your variables according to the following table. 
@@ -21,13 +21,13 @@ Environments can be used to separate software components into development tiers 
 
 |Variable Name|Description|Default Value|
 |-------------|-----------|-------------|
-|bxapikey|Your Bluemix API key. You can get the value by running `bx iam api-key-create <key name>`.||
+|bxapikey|Your IBM Cloud API key. You can get the value by running `bx iam api-key-create <key name>`.||
 |datacenter|The data center for the SSH key. You can run `bluemix cs locations` to see a list of all data centers in your region.||
 |key_label|An identifying label to assign to the SSH key.||
 |key_note|Notes to store with the SSH key. | |
 |public_key|The public key contents for the SSH keypair. | |
-|slapikey|Your Bluemix Infrastructure (SoftLayer) API key.| |
-|slusername|Your Bluemix Infrastructure (SoftLayer) user name.||
+|slapikey|Your IBM Cloud Infrastructure (SoftLayer) API key.| |
+|slusername|Your IBM Cloud Infrastructure (SoftLayer) user name.||
 
 ### Next steps
 
@@ -43,7 +43,7 @@ To run this project locally, complete the following steps:
 - Specifically for `public_key` material, see [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)) so that your workstation will use the key.
 - `terraform plan`: This command performs a dry run to show what infrastructure Terraform intends to create.
 - `terraform apply`: This command creates actual infrastructure.
-  - Infrastructure can be seen in IBM Bluemix under the following URLs:
+  - Infrastructure can be seen in IBM Cloud under the following URLs:
     - SSH keys: https://control.bluemix.net/devices/sshkeys
 - `terraform destroy`: This command destroy all infrastructure that has been created.
 
@@ -59,9 +59,9 @@ To set up the IBM Cloud provider to work with this example there are a few optio
 ### Exporting environment variables using IBMid credentials
 You'll need to export the following environment variables:
 
-- `TF_VAR_bxapikey` - Your Bluemix API Key
-- `TF_VAR_slusername` - Your Bluemix Infrastructure (SoftLayer) username
-- `TF_VAR_slapikey` - Your Bluemix Infrastructure user name.
+- `TF_VAR_bxapikey` - Your IBM Cloud API Key
+- `TF_VAR_slusername` - Your IBM Cloud Infrastructure (SoftLayer) username
+- `TF_VAR_slapikey` - Your IBM Cloud Infrastructure user name.
 
 On OS X, you can enter the following commands into your terminal:
 
