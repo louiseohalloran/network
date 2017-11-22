@@ -8,50 +8,48 @@ terraform {
 # IBM Cloud Provider
 ##############################################################################
 # See the README for details on ways to supply these values
+/*
 provider "ibm" {
   bluemix_api_key = "${var.bxapikey}"
   softlayer_username = "${var.slusername}"
   softlayer_api_key = "${var.slapikey}"
-}
+} */
 
 ##############################################################################
-# IBM SSH Key: For connecting to VMs
+# IBM Network VLAN 
 ##############################################################################
-resource "ibm_compute_ssh_key" "ssh_key" {
-  label = "${var.key_label}"
-  notes = "${var.key_note}"
-  # Public key, so this is completely safe
-  public_key = "${var.public_key}"
-}
 
+/* resource "ibm_network_vlan" "test_vlan" {
+   name = "test_vlan"
+   datacenter = "dal10"
+   type = "PRIVATE"
+   subnet_size = 8
+}
+*/
 ##############################################################################
 # Variables
 ##############################################################################
-variable bxapikey {
-  description = "Your IBM Cloud API key. You can create an API key by running bx iam api-key-create <key name>."
+variable vlan_public_id {
+  description = "Enter vlan public ID"
 }
-variable slusername {
-  description = "Your IBM Cloud Infrastructure (SoftLayer) user name."
+
+variable vlan_private_id {
+  description = "Enter vlan private ID"
 }
-variable slapikey {
-  description = "Your IBM Cloud Infrastructure (SoftLayer) API key."
+variable subnet_id {
+  description = "Enter subnet_id"
 }
-variable datacenter {
-  description = "The data center that you want to create resources in. You can run bluemix cs locations to see a list of all data centers in your region."
-}
-variable public_key {
-  description = "The public key material for the SSH keypair."
-}
-variable key_label {
-  description = "An identifying label to assign to the SSH key."
-}
-variable key_note {
-  description = "Notes to store with the SSH key."
-}
+
 
 ##############################################################################
 # Outputs
 ##############################################################################
-output "ssh_key_id" {
-  value = "${ibm_compute_ssh_key.ssh_key.id}"
+output "vlan_public_id" {
+  value = "${var.vlan_public_id}"
+}
+output "vlan_private_id" {
+  value = "${var.vlan_private_id}"
+}
+output "subnet_id" {
+  value = "${var.subnet_id}"
 }
